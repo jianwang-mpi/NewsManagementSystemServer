@@ -11,6 +11,22 @@ import java.util.Map;
  * Created by yt476 on 2017/5/8.
  */
 public class NewsManagementServer {
+    public Map<String, String> comment(String title, String comment) {
+        CommentService service = new CommentService();
+        Map<String, String> result = new HashMap<String, String>();
+        try {
+            service.comment(title, comment);
+            result.put("err_code", "0");
+            result.put("msg", "success");
+            return result;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.put("err_code", "2");
+            result.put("msg", "internal error!");
+            return result;
+        }
+    }
 
     public Map<String, String> login(String username, String password) {
         LoginLogoutService service = new LoginLogoutService();
