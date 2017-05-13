@@ -20,7 +20,7 @@ public class DataBaseUtils {
 
     final static String driverName = "com.mysql.jdbc.Driver"; //驱动名称
     static final String DBUser = "root"; //mysql用户名
-    static final String DBPasswd = "wangjian"; //mysql密码
+    static final String DBPasswd = "wangjian1"; //mysql密码
     static final String DBName = "news_management"; //数据库名
     static final String MySQLServer = "localhost"; //数据库名
     static final String MySQLServerPort = "3306"; //数据库名
@@ -29,7 +29,7 @@ public class DataBaseUtils {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         List<Map<String,Object>> resultList = new ArrayList<Map<String, Object>>();
-        String url = "jdbc:mysql://localhost:3306/wechat";
+        String url = "jdbc:mysql://localhost:3306/"+DBName;
 
             Class.forName(driverName);
             conn = DriverManager.getConnection(url,DBUser,DBPasswd);

@@ -11,6 +11,11 @@ import java.util.Map;
  * Created by yt476 on 2017/5/8.
  */
 public class UserInfoMapper {
+    public static void main(String []args) throws Exception {
+        UserInfoMapper mapper = new UserInfoMapper();
+        UserInfoDTO userInfoDTO = mapper.getUserInfo("wangjian");
+        System.out.println(userInfoDTO.getPassword());
+    }
     public UserInfoDTO getUserInfo(String username) throws Exception{
         String sql = "select * from user_info where username="+"\'"+username+"\';";
         List<Map<String ,Object >> userInfo = DataBaseUtils.queryDB(sql);

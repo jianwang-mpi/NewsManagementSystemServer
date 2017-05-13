@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * Created by yt476 on 2017/5/10.
  */
 public class PublishArticleService {
-    public boolean publistArticles(String title, String content) throws SQLException, ClassNotFoundException {
+    public boolean publishArticles(String title, String content) throws SQLException, ClassNotFoundException {
         ArticleInfoMapper mapper = new ArticleInfoMapper();
         ArticleDTO articleDTO = mapper.queryArticle(title);
         if(articleDTO == null){
